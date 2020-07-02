@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kg-auth/kg-auth.iml" filepath="$PROJECT_DIR$/kg-auth/kg-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kg-common/kg-common.iml" filepath="$PROJECT_DIR$/kg-common/kg-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kg-file/kg-file.iml" filepath="$PROJECT_DIR$/kg-file/kg-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kg-graph/kg-graph.iml" filepath="$PROJECT_DIR$/kg-graph/kg-graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kg-source/kg-source.iml" filepath="$PROJECT_DIR$/kg-source/kg-source.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kg-web/kg-web.iml" filepath="$PROJECT_DIR$/kg-web/kg-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgplatform.iml" filepath="$PROJECT_DIR$/kgplatform.iml" />
+    </modules>
+  </component>
+</project>

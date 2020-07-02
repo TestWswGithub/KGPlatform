@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingjoin.source.dao.ConnDAO">
+
+    <insert id="insert" useGeneratedKeys="true" parameterType="Connection" keyProperty="id">
+
+        insert into kg_conn_meta values(
+        #{id},
+        #{sourceType},
+        #{connType},
+        #{conn},
+        #{host},
+        #{port},
+        #{database},
+        #{table},
+        #{field},
+        #{user},
+        #{password},
+        #{databaseType},
+        #{driver},
+        #{createDate},
+        #{markField},
+        #{markType},
+        #{headField},
+        #{relField},
+        #{tailField}
+        )
+    </insert>
+
+
+    <select id="selectBycon" resultType="Connection">
+
+        select id,`host`,`port`,`database`,`table`,field,conn from kg_conn_meta where
+        `table` = #{database} and field=#{field} and database=#{database} and conn=#{conn}
+
+    </select>
+
+    <select id="selectUsersAllCorpusConns" resultType="Connection">
+        select id ,`database`,`table` from kg_conn_meta
+         where id in (SELECT DISTINCT(con_id) FROM `kg_con_distribute` where uid=#{uid}) and conn_type='corpus'
+    </select>
+    <select id="selectUsersAllKnowledgeConns" resultType="Connection">
+        select id ,`database`,`table` from kg_conn_meta
+         where id in (SELECT DISTINCT(con_id) FROM `kg_con_distribute` where uid=#{uid}) and conn_type='knowledge'
+    </select>
+
+    <select id="selectConnById" resultType="Connection">
+
+        select id,conn,user,password,database_type connType,`table`,field,mark_field markField,mark_type markType,head_field headField,relationshi_field relField,tail_field tailField
+         from kg_conn_meta where id=#{id}
+    </select>
+
+    <select id="selectUsersConns" resultType="Connection">
+
+        select id,conn,source_type sourceType,`host`,`port`,`database`,`table`,field,conn_type connType,create_date
+        createDate from kg_conn_meta
+        <trim prefix="where" prefixOverrides="and">
+            and id in (SELECT DISTINCT(con_id) FROM `kg_con_distribute` where uid=#{uid})
+            and source_type=#{type}
+            <if test="startDate!=null">
+                <![CDATA[ and  create_date>= #{startDate} ]]>
+            </if>
+            <if test="endDate!=null">
+                <![CDATA[ and create_date <= #{endDate} ]]>
+            </if>
+        </trim>
+        ORDER BY create_date desc limit #{start},#{pageSize}
+
+    </select>
+
+    <select id="usersConnsTotalCount" resultType="java.lang.Integer">
+
+        select count(*) from kg_conn_meta
+        <trim prefix="where" prefixOverrides="and">
+            and id in (SELECT DISTINCT(con_id) FROM `kg_con_distribute` where uid=#{uid})
+            and source_type=#{type}
+            <if test="startDate!=null">
+                <![CDATA[ and  create_date>= #{startDate} ]]>
+            </if>
+            <if test="endDate!=null">
+                <![CDATA[ and create_date <= #{endDate} ]]>
+            </if>
+        </trim>
+
+    </select>
+
+    <select id="selectAllConns" resultType="Connection">
+        select id,conn,`host`,`port`,`database`,`table`,field,source_type sourceType,conn_type connType,create_date createDate from kg_conn_meta
+    </select>
+
+</mapper>

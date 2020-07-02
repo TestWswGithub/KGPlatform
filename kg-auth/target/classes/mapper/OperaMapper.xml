@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingjoin.auth.dao.OperaDAO">
+
+    <select id="selectUsersOpera" resultType="Operator">
+        select pk_id id,opera_name name,opera_num operaNum from kg_opera
+            where opera_num in
+                (SELECT opera_id from kg_auth_mapping where role_id=(SELECT user_type FROM `kg_user` where id=#{uid}))
+
+    </select>
+
+    <select id="selectRoleOpera" resultType="java.lang.Integer">
+        SELECT DISTINCT opera_id FROM `kg_auth_mapping` where role_id=#{roleId}
+    </select>
+    <insert id="roleOperaBatchInsert" parameterType="java.util.List" keyProperty="id" useGeneratedKeys="true">
+
+        insert into kg_auth_mapping values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},#{item.roleId},#{item.operaId})
+        </foreach>
+
+    </insert>
+
+    <delete id="batchDelete">
+
+        delete from kg_auth_mapping where role_id=#{roleId} and opera_id in
+        <foreach collection="list"  item="item" open="(" separator="," close=")"  >
+            #{item}
+        </foreach>
+
+    </delete>
+
+
+</mapper>

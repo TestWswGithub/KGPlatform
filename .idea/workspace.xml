@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4e65c5c6-1dcf-49c8-9bb9-ca9180fbf283" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:mysql://localhost:3306/kg?serverTimezone=GMT%2B8&amp;characterEncoding=utf8&amp;useSSL=false" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:mysql://localhost:3306/kg?serverTimezone=GMT%2B8&amp;characterEncoding=utf8&amp;useSSL=false" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:mysql://localhost:3306/kg?serverTimezone=GMT%2B8&amp;characterEncoding=utf8&amp;useSSL=false" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="kg: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:mysql://localhost:3306/kg?serverTimezone=GMT%2B8&amp;characterEncoding=utf8&amp;useSSL=false" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="kg: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="kg_auth_mapping: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="kgplatform" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="1bVszpaxHlZaW0Ry91JMhdxkFOJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../showdemo/knowledgegraph" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lingjoin.web.util" />
+      <recent name="com.lingjoin.web.controller" />
+      <recent name="com.lingjoin.source.service" />
+      <recent name="com.lingjoin.source.service.impl" />
+      <recent name="com.lingjoin.common.myenum" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\users\wsw\ideaProj\KGplatform\kg-web\src\main\java\com\lingjoin\web\util" />
+      <recent name="D:\users\wsw\ideaProj\KGplatform\kg-common\src\main\java\com\lingjoin\common\util" />
+      <recent name="D:\users\wsw\ideaProj\KGplatform\kg-source\src\main\java\com\lingjoin\source\dao" />
+      <recent name="D:\users\wsw\ideaProj\KGplatform\kg-source\src\main\java\com\lingjoin\source\entity" />
+      <recent name="D:\users\wsw\ideaProj\KGplatform\kg-source\src\main\resources\mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.KGPlatformApplication">
+    <configuration name="Normal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lingjoin.web.util.Normal" />
+      <module name="kg-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingjoin.web.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lingjoin.web.controller.SearchController" />
+      <module name="kg-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingjoin.web.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KGPlatformApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="kg-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingjoin.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingjoin.KGPlatformApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="-Xms" value="512m -Xmx=512m" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KGPlatformApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="kg-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lingjoin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lingjoin.KGPlatformApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.SearchController" />
+      <item itemvalue="Spring Boot.KGPlatformApplication" />
+      <item itemvalue="Application.Normal" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.KGPlatformApplication" />
+        <item itemvalue="Application.Normal" />
+        <item itemvalue="Application.SearchController" />
+        <item itemvalue="Spring Boot.KGPlatformApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e65c5c6-1dcf-49c8-9bb9-ca9180fbf283" name="Default Changelist" comment="" />
+      <created>1588728860840</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588728860840</updated>
+      <workItem from="1588728864350" duration="53170000" />
+      <workItem from="1589248219401" duration="3834000" />
+      <workItem from="1589255797654" duration="20804000" />
+      <workItem from="1589765337934" duration="66317000" />
+      <workItem from="1590574799497" duration="10200000" />
+      <workItem from="1590717990458" duration="30693000" />
+      <workItem from="1591752197765" duration="67078000" />
+      <workItem from="1592357072931" duration="41324000" />
+      <workItem from="1593306860505" duration="62594000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Inspections" timestamp="1589163602601">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1589163602601" />
+    <state x="361" y="71" key="#Project_Structure" timestamp="1591756839954">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1591756839954" />
+    <state x="310" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591854777932">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="310" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1591854777932" />
+    <state x="477" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589769858509">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589769858509" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1593678167119">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593678167119" />
+    <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589249328247">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1589249328247" />
+    <state x="373" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1588829263481">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="373" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1588829263481" />
+    <state x="168" y="129" key="FileChooserDialogImpl" timestamp="1592961955653">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="168" y="129" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592961955653" />
+    <state width="1493" height="227" key="GridCell.Tab.0.bottom" timestamp="1593679351603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593679351603" />
+    <state width="1493" height="227" key="GridCell.Tab.0.center" timestamp="1593679351603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593679351603" />
+    <state width="1493" height="227" key="GridCell.Tab.0.left" timestamp="1593679351603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593679351603" />
+    <state width="1493" height="227" key="GridCell.Tab.0.right" timestamp="1593679351603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593679351603" />
+    <state width="1493" height="227" key="GridCell.Tab.1.bottom" timestamp="1593679351604">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593679351604" />
+    <state width="1493" height="227" key="GridCell.Tab.1.center" timestamp="1593679351603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593679351603" />
+    <state width="1493" height="227" key="GridCell.Tab.1.left" timestamp="1593679351603">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593679351603" />
+    <state width="1493" height="227" key="GridCell.Tab.1.right" timestamp="1593679351604">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="227" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593679351604" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1589274062385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589274062385" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1589274062385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1589274062385" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1589274062385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1589274062385" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1589274062385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589274062385" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590030875618">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590030875618" />
+  </component>
+</project>

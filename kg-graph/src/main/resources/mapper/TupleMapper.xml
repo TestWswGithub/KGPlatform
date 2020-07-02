@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingjoin.graph.dao.TupleDAO">
+    <insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+
+        insert into kg_tuple values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},#{item.uid},#{item.source},#{item.name},#{item.attr},#{item.attrValue})
+        </foreach>
+
+    </insert>
+
+    <select id="tuplePage" resultType="Tuple">
+        select * from kg_tuple limit #{flag},10000
+    </select>
+
+    <select id="selectBySource" resultType="Tuple">
+        select * from kg_tuple where source=#{0}
+    </select>
+
+    <select id="totalEntries" resultType="java.lang.Integer">
+        select count(1) from kg_tuple
+    </select>
+    <select id="selectNodeSource" resultType="Tuple">
+        select distinct uid,source from kg_tuple where name=#{0} or attr_value=#{0}
+    </select>
+
+    <select id="tuples2SingleDoc" resultType="Tuple">
+        select id,name,attr,attr_value attrValue from kg_tuple where source=#{0}
+    </select>
+
+    <select id="relativeInfo" resultType="Tuple">
+        SELECT DISTINCT name ,attr,attr_value attrValue FROM `kg_tuple` WHERE name =#{0} or attr_value=#{0} LIMIT 5
+    </select>
+    <select id="nodeDataSrc" resultType="Tuple">
+        SELECT DISTINCT name ,attr,attr_value attrValue FROM `kg_tuple` WHERE name =#{0} and attr='datasrc' LIMIT 1
+    </select>
+</mapper>

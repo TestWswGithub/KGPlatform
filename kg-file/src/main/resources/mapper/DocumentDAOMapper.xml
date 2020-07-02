@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lingjoin.file.dao.DocDAO">
+
+    <insert id="batchInsert" parameterType="java.util.List" keyProperty="docId" useGeneratedKeys="true">
+        insert into kg_doc values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.docId},
+            #{item.uuid},
+            #{item.suffixName},
+            #{item.name},
+            #{item.path},
+            #{item.uid},
+            #{item.userName},
+            #{item.type},
+            #{item.timeStamp},
+            #{item.uploadTime},
+            #{item.delete},
+            #{item.summary},
+            #{item.keyWords},
+            #{item.text},
+            #{item.nlpResult},
+            #{item.wordfeq}
+            )
+        </foreach>
+    </insert>
+
+    <insert id="insert" parameterType="Doc" useGeneratedKeys="true">
+        insert into kg_doc values
+            (
+            #{docId},
+            #{uuid},
+            #{suffixName},
+            #{name},
+            #{path},
+            #{uid},
+            #{userName},
+            #{type},
+            #{timeStamp},
+            #{uploadTime},
+            #{delete},
+            #{summary},
+            #{keyWords},
+            #{text},
+            #{nlpResult},
+            #{wordfeq}
+            )
+
+    </insert>
+
+
+
+    <update id="delete" parameterType="java.lang.Integer">
+        update kg_doc set is_delete = 1 where docId=#{id}
+    </update>
+    <update id="batchDelete" parameterType="java.util.List">
+        update kg_doc set is_delete =1 where docId  in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+
+    <select id="selectByUUID" resultType="Doc">
+        select docId,suffixName,path,
+        (select count(id) from kg_keyval where kg_keyval.uuid=kg_doc.uuid) kvCount,
+        UUID,uploadTime,uid,userName,type,keyWords,summary,text,nlpResult,wordfeq from kg_doc
+         where UUID=#{uuid} and uid=#{uid}
+    </select>
+
+
+
+    <select id="totalCount" resultType="java.lang.Integer">
+        select count(docId)  from kg_doc
+        <include refid="condition"/>
+    </select>
+
+    <select id="selectDocPage" resultType="Doc">
+        select docId,
+        suffixName,
+        (select count(id) from kg_keyval where kg_keyval.uuid=kg_doc.uuid) kvCount,
+        UUID,
+        uploadTime,
+        uid,
+        IS_DELETE `delete`,
+        type,
+        userName,
+        path from kg_doc
+        <include refid="condition"/>
+         ORDER BY uploadTime DESC
+        limit #{start},#{pageSize}
+    </select>
+    <sql id="condition">
+        <trim prefix="where" prefixOverrides="and">
+            <if test="status!=null and status!=''">
+                and status = #{status}
+            </if>
+            <if test="docName!=null and docName!=''">
+                and name LIKE concat('%',#{docName},'%')
+            </if>
+            <if test="startDate!=null">
+                <![CDATA[ and  uploadTime>= #{startDate} ]]>
+            </if>
+            <if test="endDate!=null">
+                <![CDATA[ and uploadTime <= #{endDate} ]]>
+            </if>
+            and uid=#{uid}
+            and is_delete = 0
+        </trim>
+    </sql>
+
+</mapper>

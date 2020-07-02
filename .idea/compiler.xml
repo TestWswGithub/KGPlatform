@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kg-common" />
+        <module name="kg-auth" />
+        <module name="kg-web" />
+        <module name="kg-file" />
+        <module name="kg-source" />
+        <module name="kg-graph" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kg-auth" target="1.8" />
+      <module name="kg-common" target="1.8" />
+      <module name="kg-file" target="1.8" />
+      <module name="kg-graph" target="1.8" />
+      <module name="kg-source" target="1.8" />
+      <module name="kg-web" target="1.8" />
+      <module name="kgplatform" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kg-auth" options="-parameters" />
+      <module name="kg-common" options="-parameters" />
+      <module name="kg-file" options="-parameters" />
+      <module name="kg-graph" options="-parameters" />
+      <module name="kg-source" options="-parameters" />
+      <module name="kg-web" options="-parameters" />
+    </option>
+  </component>
+</project>

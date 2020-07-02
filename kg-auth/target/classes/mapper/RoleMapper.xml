@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingjoin.auth.dao.RoleDAO">
+
+    <select id="selectUsersRole" resultType="Role">
+
+        select pk_id id,role_name roleName,role_num roleNum from kg_role where creator_id=#{uid}
+
+    </select>
+
+
+    <insert id="insertRole" parameterType="Role" useGeneratedKeys="true" keyProperty="id">
+        insert into kg_role values(#{id},#{roleName},#{roleNum},#{uid})
+    </insert>
+
+    <delete id="deleteRole">
+        delete from kg_role where pk_id=#{id}
+    </delete>
+
+    <update id="updateRoleName">
+
+        update kg_role set role_name=#{roleName} where pk_id=#{roleId}
+
+    </update>
+
+    <select id="selectRoleName" parameterType="java.lang.Integer" resultType="java.lang.String">
+        select role_name from kg_role where pk_id=#{roleId}
+    </select>
+
+    <select id="selectRoleUser" resultType="User">
+        select id,name from kg_user where user_type=#{roleId}
+    </select>
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingjoin.file.dao.KeyValDAO">
+
+    <insert id="batchInsert" parameterType="java.util.List" keyProperty="id" useGeneratedKeys="true">
+        insert into kg_keyval values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},#{item.uid},#{item.uuid},#{item.time},#{item.name},#{item.val},#{item.src},'','','')
+        </foreach>
+    </insert>
+
+    <select id="keyValPage" resultType="KeyVal">
+        select id,uid,uuid,time ,name ,val, src from kg_keyval
+        <trim prefix="where" prefixOverrides="and">
+            and uid=#{uid}
+            and uuid=#{uuid}
+            <if test="likeName!=null and likeName!=''">
+                and name LIKE concat('%',#{likeName},'%') or val LIKE concat('%',#{likeName},'%') or src LIKE
+                concat('%',#{likeName},'%')
+            </if>
+        </trim>
+    </select>
+    <select id="cdkv" resultType="KeyVal">
+        select id,uid,uuid,time ,name ,val, src from kg_keyval
+        <trim prefix="where" prefixOverrides="and">
+            and uid=#{uid}
+            and uuid=#{uuid}
+            <if test="likeName!=null and likeName!=''">
+                and name LIKE concat('%',#{likeName},'%') or val LIKE concat('%',#{likeName},'%') or src LIKE
+                concat('%',#{likeName},'%')
+            </if>
+        </trim>
+        ORDER BY time desc
+    </select>
+
+    <select id="eqandcn" resultType="KeyVal">
+
+        select id,name ,val from kg_keyval where uuid in
+        <foreach collection="list" item="uuid" open="(" separator="," close=")">
+            #{uuid}
+        </foreach>
+        and name in ('装备','参演国家')
+
+
+    </select>
+
+
+
+
+
+
+    <select id="totalCount" resultType="java.lang.Integer">
+        select count(id) from kg_keyval
+        <trim prefix="where" prefixOverrides="and">
+            and uid=#{uid}
+            and uuid=#{uuid}
+            <if test="likeName!=null and likeName!=''">
+                and name LIKE concat('%',#{likeName},'%') or val LIKE concat('%',#{likeName},'%') or src LIKE concat('%',#{likeName},'%')
+            </if>
+        </trim>
+    </select>
+
+
+
+
+
+
+
+</mapper>

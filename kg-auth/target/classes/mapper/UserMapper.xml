@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lingjoin.auth.dao.UserDAO">
+
+
+    <select id="selectAllDept" resultType="Dept">
+        select id,dept_name name,dept_num deptNum from kg_dept
+    </select>
+
+    <select id="selectDeptManagers" resultType="User">
+
+    select id,name,
+    (select dept_name from kg_dept where kg_user.dept_id=kg_dept.dept_num) deptName,dept_id deptId
+    from kg_user where user_type = 2
+    </select>
+
+    <select id="selectSubUsers" resultType="User">
+        select id,name,
+    (select dept_name from kg_dept where kg_user.dept_id=kg_dept.dept_num) deptName,dept_id deptId
+    from kg_user where user_type = 3 and dept_id=#{0}
+    </select>
+
+    <select id="selectManagedUsers" resultType="User">
+        SELECT id,name,(select role_name from kg_role where kg_role.role_num=kg_user.user_type) userTypeFROM `kg_user` where creator_id=#{creatorId}
+    </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="User">
+        insert into kg_user values (#{id},#{name},#{account},#{password},#{deptId},#{userTypeInt})
+    </insert>
+
+    <select id="selectByAccPwd" resultType="User">
+        select id,name,user_type from kg_user where account=#{account} and password=#{password}
+    </select>
+
+    <select id="selectAllUsers" resultType="User">
+        SELECT id,name,(select role_name from kg_role where kg_role.role_num=kg_user.user_type) userType FROM kg_user
+    </select>
+
+    <select id="selectByUsername" resultType="User">
+        select id from kg_user where account=#{account}
+    </select>
+</mapper>
