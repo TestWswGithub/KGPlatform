@@ -8,11 +8,15 @@ import com.lingjoin.source.entity.KnowledgeEntry;
 import com.lingjoin.source.service.ConService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static org.springframework.transaction.annotation.Propagation.*;
 
 
 @Service
@@ -50,26 +54,31 @@ public class ConService_impl implements ConService {
     }
 
     @Override
+    @Transactional
     public Integer saveConn(com.lingjoin.source.entity.Connection connection) {
         return connDAO.insert(connection);
     }
 
     @Override
+    @Transactional(propagation = SUPPORTS,readOnly = true)
     public boolean exist(String database, String table, String field, String conn) {
         return connDAO.selectBycon(database, table, field, conn) != null;
     }
 
     @Override
+    @Transactional(propagation = SUPPORTS,readOnly = true)
     public List<com.lingjoin.source.entity.Connection> selectUsersConns(Integer start, Integer pageSize, Date startDate, Date endDate, Integer uid, String type) {
         return connDAO.selectUsersConns(start, pageSize, startDate, endDate, uid, type);
     }
 
     @Override
+    @Transactional(propagation = SUPPORTS,readOnly = true)
     public Integer usersConnsTotalCount(Date startDate, Date endDate, Integer uid, String type) {
         return connDAO.usersConnsTotalCount(startDate, endDate, uid, type);
     }
 
     @Override
+    @Transactional(propagation = SUPPORTS,readOnly = true)
     public List<com.lingjoin.source.entity.Connection> selectUsersAllCorpusConns(Integer uid) {
         return connDAO.selectUsersAllCorpusConns(uid);
     }

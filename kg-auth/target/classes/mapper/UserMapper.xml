@@ -18,11 +18,11 @@
     <select id="selectSubUsers" resultType="User">
         select id,name,
     (select dept_name from kg_dept where kg_user.dept_id=kg_dept.dept_num) deptName,dept_id deptId
-    from kg_user where user_type = 3 and dept_id=#{0}
+     from kg_user where user_type = 3 and dept_id=#{0}
     </select>
 
     <select id="selectManagedUsers" resultType="User">
-        SELECT id,name,(select role_name from kg_role where kg_role.role_num=kg_user.user_type) userTypeFROM `kg_user` where creator_id=#{creatorId}
+        SELECT id,account,name,(select role_name from kg_role where kg_role.pk_id=kg_user.user_type) userType FROM `kg_user` where creator_id=#{creatorId}
     </select>
 
     <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="User">

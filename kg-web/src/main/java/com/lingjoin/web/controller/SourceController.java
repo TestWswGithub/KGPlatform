@@ -293,11 +293,12 @@ public class SourceController {
     public String userList(HttpServletRequest request) {
 
         ReturnModel model = new ReturnModel(null, null, 0);
-        String token = request.getHeader("Authorization");
-        String[] split = token.split("\\.");
-        User user = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
-        Integer userTypeInt = user.getUserTypeInt();
-        List<User> users = userService.listManagedUsers(user.getId());
+//        String token = request.getHeader("Authorization");
+//        String[] split = token.split("\\.");
+//        User user = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
+        //todo
+        Integer uid=1;
+        List<User> users = userService.listManagedUsers(uid);
         model.setData(users);
         return JSON.toJSONString(model);
     }
