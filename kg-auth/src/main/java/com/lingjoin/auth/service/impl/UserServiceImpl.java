@@ -68,4 +68,22 @@ public class UserServiceImpl implements UserService {
         return userDAO.selectAllUsers();
     }
 
+    @Override
+    @Transactional
+    public void deleteUser(Integer uid) {
+        userDAO.deleteUser(uid);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
+    public User selectByUid(Integer uid) {
+        return userDAO.selectByUid(uid);
+    }
+
+    @Override
+    @Transactional
+    public void updateUser(User user) {
+        userDAO.updateUser(user);
+    }
+
 }

@@ -12,12 +12,18 @@ public enum ConType {
 
     private final String type;
 
-    private ConType(String type) {
+    ConType(String type) {
         this.type = type;
     }
 
 
     public static ConType toConType(String type){
         return valueOf(type);
+    }
+
+
+    public static void main(String[] args) {
+        ConType mysql = toConType("MYSQL");
+        System.out.println(mysql.type);
     }
 }

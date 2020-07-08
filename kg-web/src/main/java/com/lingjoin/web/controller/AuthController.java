@@ -325,9 +325,20 @@ public class AuthController {
     }
 
 
+    @RequestMapping("/deleteUser")
+    public String deleteUser(Integer uid,HttpServletRequest request){
+        ReturnModel model = new ReturnModel(null, "", 0);
+//        String token = request.getHeader("Authorization");
+//        String[] split = token.split("\\.");
+//        User user = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
+//        Integer uid = user.getId();
+        Integer manageId = 1;
+        //todo 先检查该用户有没有删除用户的权限
+        userService.deleteUser(uid);
+        model.setMessage("删除成功");
+        return JSON.toJSONString(model);
 
-
-
+    }
 
 
     @RequestMapping("/logout")
@@ -345,5 +356,38 @@ public class AuthController {
         return JSON.toJSONString(model);
 
     }
+
+
+    @RequestMapping("/userInfo")
+    public String userInfo(Integer uid){
+
+        ReturnModel model = new ReturnModel(null, "", 0);
+        User user = userService.selectByUid(uid);
+        model.setData(user);
+        return JSON.toJSONString(model);
+
+    }
+
+    @RequestMapping("/updateUser")
+    public String updateUser(HttpServletRequest request,Integer uid,String name,String password,Integer userType){
+        ReturnModel model = new ReturnModel(null, "", 0);
+//        String token = request.getHeader("Authorization");
+//        String[] split = token.split("\\.");
+//        User parentUser = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
+//        Integer parentUid = parentUser.getId();
+        Integer parentUid = 1;
+        //todo 先判断登录用户是否有修改的权限
+
+        User updateUser = new User(uid, name,null, password, parentUid, userType);
+
+        userService.updateUser(updateUser);
+
+        model.setMessage("修改成功");
+        return JSON.toJSONString(model);
+
+    }
+
+
+
 
 }

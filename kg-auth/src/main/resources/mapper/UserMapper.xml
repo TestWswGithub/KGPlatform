@@ -26,13 +26,18 @@
     </select>
 
     <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="User">
-        insert into kg_user values (#{id},#{name},#{account},#{password},#{deptId},#{userTypeInt})
+        insert into kg_user values (#{id},#{name},#{account},#{password},#{deptId},#{userTypeInt},#{creatorId})
     </insert>
 
     <select id="selectByAccPwd" resultType="User">
         select id,name,user_type from kg_user where account=#{account} and password=#{password}
     </select>
 
+    <delete id="deleteUser">
+
+        delete from kg_user where id=#{uid}
+
+    </delete>
     <select id="selectAllUsers" resultType="User">
         SELECT id,name,(select role_name from kg_role where kg_role.role_num=kg_user.user_type) userType FROM kg_user
     </select>
@@ -40,4 +45,14 @@
     <select id="selectByUsername" resultType="User">
         select id from kg_user where account=#{account}
     </select>
+
+    <select id="selectByUid" resultType="User">
+        select id,name,account,password,user_type userType,creator_id creatorId from kg_user where id=#{uid}
+    </select>
+
+
+    <update id="updateUser" parameterType="User">
+        update kg_user set name=#{name},password=#{password},user_type=#{userTypeInt} where id=#{id}
+    </update>
+
 </mapper>

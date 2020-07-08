@@ -60,6 +60,9 @@ public interface UserService {
      * @return
      */
     List<User>listAllUsers();
+    void deleteUser(Integer uid);
+    User selectByUid(Integer uid);
+    void updateUser(User user);
 
 
 }

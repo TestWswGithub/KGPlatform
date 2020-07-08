@@ -35,13 +35,20 @@
         `table` = #{database} and field=#{field} and database=#{database} and conn=#{conn}
 
     </select>
+    
+    <select id="selectByIpPortDatabaseTableConType" resultType="Connection">
+        select id,`host`,`port`,`database`,`table`,conn_type connType from kg_conn_meta where
+        `host` = #{host} and `port`=#{port} and `table`=#{table} and `database`=#{database} and conn_type=#{connType}
+    </select>
+    
+    
 
     <select id="selectUsersAllCorpusConns" resultType="Connection">
-        select id ,`database`,`table` from kg_conn_meta
+        select id ,`database`,`table` ,database_type databaseType,create_date createDate from kg_conn_meta
          where id in (SELECT DISTINCT(con_id) FROM `kg_con_distribute` where uid=#{uid}) and conn_type='corpus'
     </select>
     <select id="selectUsersAllKnowledgeConns" resultType="Connection">
-        select id ,`database`,`table` from kg_conn_meta
+        select id ,`database`,`table` ,database_type databaseType,create_date createDate from kg_conn_meta
          where id in (SELECT DISTINCT(con_id) FROM `kg_con_distribute` where uid=#{uid}) and conn_type='knowledge'
     </select>
 

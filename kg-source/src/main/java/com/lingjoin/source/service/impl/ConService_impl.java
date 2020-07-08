@@ -3,9 +3,12 @@ package com.lingjoin.source.service.impl;
 
 import com.lingjoin.common.util.Page;
 import com.lingjoin.source.dao.ConnDAO;
+import com.lingjoin.source.dao.UserConnDAO;
 import com.lingjoin.source.entity.CorpusEntry;
 import com.lingjoin.source.entity.KnowledgeEntry;
+import com.lingjoin.source.entity.UsersConn;
 import com.lingjoin.source.service.ConService;
+import com.lingjoin.source.service.UsersConnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -24,21 +27,27 @@ public class ConService_impl implements ConService {
 
 
     @Autowired
+    private UsersConnService usersConnService;
+    @Autowired
     private ConnDAO connDAO;
 
     @Override
     public boolean testMysqlCon(String ip, String port, String database, String username, String password) {
-        String url = "jdbc:mysql://" + ip + ":" + port + "/" + database + "?serverTimezone=GMT&characterEncoding=utf8&useSSL=false";
+        String url = "jdbc:mysql://" + ip + ":" + port + "/" + database + "?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=false";
         Connection conn = null;
 
+        System.out.println(url);
+        System.out.println(username);
+        System.out.println(password);
         try {
-            //1.加载驱动程序
-            Class.forName("com.mysql.cj.jdbc.Driver");
+//            //1.加载驱动程序
+//            Class.forName("com.mysql.cj.jdbc.Driver");
             //2. 获得数据库连接
             conn = DriverManager.getConnection(url, username, password);
+            System.out.println("connnnn"+conn);
             if (conn == null) return false;
             return true;
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         } finally {
@@ -55,8 +64,13 @@ public class ConService_impl implements ConService {
 
     @Override
     @Transactional
-    public Integer saveConn(com.lingjoin.source.entity.Connection connection) {
-        return connDAO.insert(connection);
+    public Integer saveConn(com.lingjoin.source.entity.Connection connection,Integer uid) {
+        Integer insert = connDAO.insert(connection);
+        Integer conID = connection.getId();
+
+        //同时将本链接添加到管理员自己的链接库中。
+        usersConnService.save(new UsersConn(null, conID, uid));
+        return insert;
     }
 
     @Override
@@ -239,6 +253,11 @@ public class ConService_impl implements ConService {
 
 
         return page;
+    }
+
+    @Override
+    public boolean exist(String host, Integer port, String database, String table, String connType) {
+        return connDAO.selectByIpPortDatabaseTableConType(host,port,database,table,connType)!=null;
     }
 
 

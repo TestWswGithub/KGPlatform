@@ -13,27 +13,38 @@ public interface ConService {
 
     boolean testMysqlCon(String ip, String port, String database, String username, String password);
 
-    Integer saveConn(Connection connection);
+    Integer saveConn(Connection connection,Integer uid);
 
     boolean exist(String database, String table, String field, String conn);
 
     List<Connection> selectUsersConns(Integer start,
-                                       Integer pageSize,
-                                       Date startDate,
+                                      Integer pageSize,
+                                      Date startDate,
                                       Date endDate,
                                       Integer uid,
                                       String type);
-    Integer usersConnsTotalCount( Date startDate,
-                                  Date endDate,
+
+    Integer usersConnsTotalCount(Date startDate,
+                                 Date endDate,
                                  Integer uid,
                                  String type);
+
     List<Connection> selectUsersAllCorpusConns(Integer uid);
+
     Connection selectConnById(Integer id);
 
 
     Page listCorpusEntries(Integer conid, Integer pageNum, Integer pageSize);
+
     List<Connection> selectUsersAllKnowledgeConns(Integer uid);
 
     Page listKnowledgeEntries(Integer conid, Integer pageNum, Integer pageSize);
+
+
+    boolean exist(String host,
+                  Integer port,
+                  String database,
+                  String table,
+                  String connType);
 
 }

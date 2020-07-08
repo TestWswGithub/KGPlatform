@@ -38,5 +38,9 @@ public interface UserDAO {
     List<User>selectSubUsers(Integer deptId);
     List<User>selectManagedUsers(Integer creatorId);
     List<User>selectAllUsers();
+    User selectByUid(Integer uid);
+    void deleteUser(Integer uid);
+    void updateUser(User user);
+
 
 }

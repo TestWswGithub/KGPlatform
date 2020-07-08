@@ -32,4 +32,11 @@ public interface ConnDAO {
     List<Connection> selectAllConns();
     List<Connection> selectUsersAllKnowledgeConns(Integer uid);
 
+    Connection selectByIpPortDatabaseTableConType(@Param("host") String host,
+                                                  @Param("port") Integer port,
+                                                  @Param("database") String database,
+                                                  @Param("table") String table,
+                                                  @Param("connType") String connType);
+
+
 }

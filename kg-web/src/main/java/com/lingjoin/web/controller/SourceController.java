@@ -10,7 +10,6 @@ import com.lingjoin.common.anonation.LoginRequired;
 import com.lingjoin.common.myenum.ConType;
 import com.lingjoin.common.util.Page;
 import com.lingjoin.common.util.ReturnModel;
-import com.lingjoin.file.entity.Doc;
 import com.lingjoin.graph.service.TupleService;
 import com.lingjoin.source.entity.Connection;
 import com.lingjoin.source.entity.UsersConn;
@@ -65,7 +64,7 @@ public class SourceController {
         Integer uid = 1;
         List<Connection> connections = conService.selectUsersAllCorpusConns(uid);
         model.setData(connections);
-        return JSON.toJSONString(model);
+        return JSON.toJSONStringWithDateFormat(model,"yyyy-MM-dd HH:mm:ss",SerializerFeature.WriteDateUseDateFormat);
     }
 
     //对接用户语料源列表(即数据库连接中所存在的内容)
@@ -77,9 +76,10 @@ public class SourceController {
         ReturnModel model = new ReturnModel(null, null, 0);
         Page page = conService.listCorpusEntries(id, pageNum, pageSize);
         model.setData(page);
-        System.out.println("===>page"+page);
+        System.out.println("===>page" + page);
         return JSON.toJSONString(model);
     }
+
     //对接用户所有知识源连接列表
     @RequestMapping("/users_knowledge_conns")
     @LoginRequired
@@ -92,21 +92,20 @@ public class SourceController {
         Integer uid = 1;
         List<Connection> connections = conService.selectUsersAllKnowledgeConns(uid);
         model.setData(connections);
-        return JSON.toJSONString(model);
+        return JSON.toJSONStringWithDateFormat(model,"yyyy-MM-dd HH:mm:ss",SerializerFeature.WriteDateUseDateFormat);
     }
 
     //对接用户语料源列表(即数据库连接中所存在的内容)
     @RequestMapping("/knowledgeList")
     public String knowledgeList(HttpServletRequest request,
-                             @RequestParam(value = "id") Integer id,
-                             @RequestParam(value = "pageNum", required = false, defaultValue = "1") Integer pageNum,
-                             @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
+                                @RequestParam(value = "id") Integer id,
+                                @RequestParam(value = "pageNum", required = false, defaultValue = "1") Integer pageNum,
+                                @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
         ReturnModel model = new ReturnModel(null, null, 0);
         Page page = conService.listKnowledgeEntries(id, pageNum, pageSize);
         model.setData(page);
         return JSON.toJSONString(model);
     }
-
 
 
     //展示用户所拥有的连接            1级有所有连接       2级拥有1级下发给自己的。
@@ -297,7 +296,7 @@ public class SourceController {
 //        String[] split = token.split("\\.");
 //        User user = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
         //todo
-        Integer uid=1;
+        Integer uid = 1;
         List<User> users = userService.listManagedUsers(uid);
         model.setData(users);
         return JSON.toJSONString(model);
@@ -308,17 +307,21 @@ public class SourceController {
     @LoginRequired
     @AdminAuthRequired
     public String testCon(String connType,
-                          String sourceType,
-                          String databaseType,
+                          @RequestParam(defaultValue = "",required = false) String sourceType,
+                          @RequestParam(defaultValue = "mysql") String databaseType,
                           String ip,
                           String port,
-                          @RequestParam(defaultValue = "mysql") String database,
+                          String database,
                           String username,
                           String password,
                           String table,
                           @RequestParam(required = false, defaultValue = "") String field,
-                          String markType,
-                          String markField) {
+                          @RequestParam(required = false, defaultValue = "int")String markType,
+                          @RequestParam(required = false, defaultValue = "id")String markField,
+                          @RequestParam(required = false, defaultValue = "") String head,
+                          @RequestParam(required = false, defaultValue = "") String relation,
+                          @RequestParam(required = false, defaultValue = "") String tail,
+                          HttpServletRequest request) {
 
         logger.info("databaseType:" + databaseType);
         logger.info("connType:" + connType);
@@ -332,9 +335,12 @@ public class SourceController {
         logger.info("field:" + field);
         logger.info("markType:" + markType);
         logger.info("markField:" + markField);
+        logger.info("head:" + head);
+        logger.info("relation:" + relation);
+        logger.info("tail:" + tail);
 
 
-        ReturnModel model = new ReturnModel(null, "连接数据库成功", 0);
+        ReturnModel model = new ReturnModel(null, "连接数据库成功,请提交", 0);
         boolean able = false;
         HashMap<String, Object> map = new HashMap<>();
         map.put("databaseType", databaseType);
@@ -348,11 +354,15 @@ public class SourceController {
         map.put("field", field);
         map.put("markType", markType);
         map.put("markField", markField);
+        map.put("head", head);
+        map.put("relation", relation);
+        map.put("tail", tail);
 
         ConType conType = ConType.toConType(databaseType);
         switch (conType) {
             case MYSQL:
                 able = conService.testMysqlCon(ip, port, database, username, password);
+                System.out.println("able===============>"+able);
                 break;
             case SOLR:
                 //todo  solrCon
@@ -377,7 +387,7 @@ public class SourceController {
     @LoginRequired
     @AdminAuthRequired
     public String saveCon(String connType,
-                          String sourceType,
+                          @RequestParam(required = false, defaultValue = "") String sourceType,
                           String databaseType,
                           String ip,
                           Integer port,
@@ -386,18 +396,20 @@ public class SourceController {
                           String password,
                           String table,
                           @RequestParam(required = false, defaultValue = "") String field,
-                          String markType,
-                          String markField,
+                          @RequestParam(required = false, defaultValue = "int")String markType,
+                          @RequestParam(required = false, defaultValue = "id")String markField,
                           @RequestParam(required = false, defaultValue = "") String head,
                           @RequestParam(required = false, defaultValue = "") String relation,
                           @RequestParam(required = false, defaultValue = "") String tail,
                           HttpServletRequest request) {
 
 
-        String token = request.getHeader("Authorization");
-        String[] split = token.split("\\.");
-        User user = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
-        Integer uid = user.getId();
+        ReturnModel model = new ReturnModel(null, null, 0);
+//        String token = request.getHeader("Authorization");
+//        String[] split = token.split("\\.");
+//        User user = JSON.parseObject(new String(Base64.decodeBase64(split[1])), User.class);
+//        Integer uid = user.getId();
+        Integer uid = 1;
 
         logger.info("databaseType:" + databaseType);
         logger.info("connType:" + connType);
@@ -416,7 +428,7 @@ public class SourceController {
         logger.info("tail:" + tail);
 
 
-        ReturnModel model = new ReturnModel(null, "", 0);
+
 
         String conn = null;
         Connection connection = new Connection();
@@ -439,7 +451,7 @@ public class SourceController {
                 return JSON.toJSONString(model);
         }
 
-        if (conService.exist(database, table, field, conn)) {
+        if (conService.exist(ip, port, database, table,connType)) {
             HashMap<String, Object> map = new HashMap<>();
             map.put("databaseType", databaseType);
             map.put("connType", connType);
@@ -483,15 +495,8 @@ public class SourceController {
         connection.setTailField(tail);
 
 
-        conService.saveConn(connection);
+        conService.saveConn(connection,uid);
         Integer conID = connection.getId();
-
-
-        //同时将本链接添加到管理员自己的链接库中。
-        usersConnService.save(new UsersConn(null, conID, uid));
-
-        //同时设置标记字段的初始值。整形默认为1，日期默认为1970年 todo
-
 
         model.setMessage("保存链接成功");
         return JSON.toJSONString(model);
