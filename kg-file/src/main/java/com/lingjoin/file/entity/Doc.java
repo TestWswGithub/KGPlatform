@@ -67,6 +67,15 @@ public class Doc implements Serializable {
     private String nlpResult;
 
 
+    private String wordfeq;
+
+    public String getWordfeq() {
+        return wordfeq;
+    }
+
+    public void setWordfeq(String wordfeq) {
+        this.wordfeq = wordfeq;
+    }
 
     public String getNlpResult() {
         return nlpResult;

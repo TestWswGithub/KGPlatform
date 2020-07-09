@@ -40,6 +40,7 @@ public interface ConService {
 
     Page listKnowledgeEntries(Integer conid, Integer pageNum, Integer pageSize);
 
+    String getCropus(Integer conid,Integer rowId);
 
     boolean exist(String host,
                   Integer port,

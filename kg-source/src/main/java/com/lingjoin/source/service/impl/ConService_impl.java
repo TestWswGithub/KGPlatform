@@ -256,6 +256,69 @@ public class ConService_impl implements ConService {
     }
 
     @Override
+    public String getCropus(Integer conid, Integer rowId) {
+        com.lingjoin.source.entity.Connection connection = selectConnById(conid);
+
+
+        String url = connection.getConn();
+        String username = connection.getUser();
+        String password = connection.getPassword();
+        String table = connection.getTable();
+        String field = connection.getField();
+        String markField = connection.getMarkField();
+        String pageSQL = "select " + field + " from " + table + " where "+markField+" = "+rowId;
+        System.out.println("pageSQL=====>" + pageSQL);
+
+        PreparedStatement pstmt = null;
+        Connection con = null;
+        ResultSet rs = null;
+        String string =null;
+        try {
+            con = DriverManager.getConnection(url, username, password);
+
+            pstmt = con.prepareStatement(pageSQL);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                 string=rs.getString(1);
+
+            }
+        } catch (SQLException se) {
+            System.out.println("第三方数据库连接失败！");
+            se.printStackTrace();
+            return string;
+        } finally {
+            if (rs != null) {   // 关闭记录集
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pstmt != null) {   // 关闭声明
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (con != null) {  // 关闭连接对象
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+        }
+
+
+        return string;
+    }
+
+    @Override
     public boolean exist(String host, Integer port, String database, String table, String connType) {
         return connDAO.selectByIpPortDatabaseTableConType(host,port,database,table,connType)!=null;
     }

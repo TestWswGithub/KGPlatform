@@ -40,7 +40,7 @@ public class TupleServiceImpl implements TupleService {
     private TupleDAO tupleDAO;
 
     @Override
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional()
     public Integer batchInsert(String jsonResult, Integer uid, String sources) {
 
         ArrayList<Tuple> tuples = new ArrayList<>();

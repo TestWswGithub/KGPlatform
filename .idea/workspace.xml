@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e65c5c6-1dcf-49c8-9bb9-ca9180fbf283" name="Default Changelist" comment="20200706  加了一些注释">
+    <list default="true" id="4e65c5c6-1dcf-49c8-9bb9-ca9180fbf283" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/src/main/java/com/lingjoin/auth/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/src/main/java/com/lingjoin/auth/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/src/main/java/com/lingjoin/auth/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/src/main/java/com/lingjoin/auth/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/src/main/java/com/lingjoin/auth/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/src/main/java/com/lingjoin/auth/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/target/classes/com/lingjoin/auth/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/target/classes/com/lingjoin/auth/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/target/classes/com/lingjoin/auth/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/target/classes/com/lingjoin/auth/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/target/classes/com/lingjoin/auth/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/target/classes/com/lingjoin/auth/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-auth/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kg-auth/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-common/src/main/java/com/lingjoin/common/myenum/ConType.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-common/src/main/java/com/lingjoin/common/myenum/ConType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-common/target/classes/com/lingjoin/common/myenum/ConType.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-common/target/classes/com/lingjoin/common/myenum/ConType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-source/src/main/java/com/lingjoin/source/dao/ConnDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/src/main/java/com/lingjoin/source/dao/ConnDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-file/src/main/java/com/lingjoin/file/entity/Doc.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-file/src/main/java/com/lingjoin/file/entity/Doc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-graph/src/main/java/com/lingjoin/graph/service/impl/TupleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-graph/src/main/java/com/lingjoin/graph/service/impl/TupleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-graph/target/classes/com/lingjoin/graph/service/impl/TupleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-graph/target/classes/com/lingjoin/graph/service/impl/TupleServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kg-source/src/main/java/com/lingjoin/source/service/ConService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/src/main/java/com/lingjoin/source/service/ConService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kg-source/src/main/java/com/lingjoin/source/service/impl/ConService_impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/src/main/java/com/lingjoin/source/service/impl/ConService_impl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-source/src/main/resources/mapper/ConMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/src/main/resources/mapper/ConMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-source/target/classes/com/lingjoin/source/dao/ConnDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/target/classes/com/lingjoin/source/dao/ConnDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kg-source/target/classes/com/lingjoin/source/service/ConService.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/target/classes/com/lingjoin/source/service/ConService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kg-source/target/classes/com/lingjoin/source/service/impl/ConService_impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/target/classes/com/lingjoin/source/service/impl/ConService_impl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-source/target/classes/mapper/ConMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kg-source/target/classes/mapper/ConMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/SourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/SourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SourceController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SourceController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SourceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/src/main/java/com/lingjoin/web/controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SearchController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SearchController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/kg-web/target/classes/com/lingjoin/web/controller/SearchController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +112,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -224,9 +213,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.KGPlatformApplication" />
+        <item itemvalue="Application.SearchController" />
         <item itemvalue="Application.ConType" />
         <item itemvalue="Application.Normal" />
-        <item itemvalue="Application.SearchController" />
         <item itemvalue="Spring Boot.KGPlatformApplication" />
       </list>
     </recent_temporary>
@@ -252,7 +241,7 @@
       <workItem from="1593306860505" duration="88139000" />
       <workItem from="1594021688791" duration="8261000" />
       <workItem from="1594100179930" duration="12854000" />
-      <workItem from="1594178715446" duration="11840000" />
+      <workItem from="1594178715446" duration="32826000" />
     </task>
     <task id="LOCAL-00001" summary="20200706  加了一些注释">
       <created>1594001861635</created>
@@ -261,7 +250,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594001861635</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="20200708  加了一些注释，调试了一些接口">
+      <created>1594199926965</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594199926966</updated>
+    </task>
+    <task id="LOCAL-00003" summary="20200708  加了一些注释，调试了一些接口">
+      <created>1594199946685</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594199946685</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +285,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20200706  加了一些注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200706  加了一些注释" />
+    <MESSAGE value="20200708  加了一些注释，调试了一些接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="20200708  加了一些注释，调试了一些接口" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Inspections" timestamp="1589163602601">
@@ -301,10 +305,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1589769858509" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1594106749466">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1594277991841">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594106749466" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594277991841" />
     <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589249328247">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -313,46 +317,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="373" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1588829263481" />
-    <state x="511" y="10" key="CommitChangelistDialog2" timestamp="1594199919736">
+    <state x="511" y="10" key="CommitChangelistDialog2" timestamp="1594199945530">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="511" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594199919736" />
+    <state x="511" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594199945530" />
     <state x="168" y="129" key="FileChooserDialogImpl" timestamp="1594184324937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="168" y="129" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594184324937" />
-    <state width="1493" height="535" key="GridCell.Tab.0.bottom" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.0.bottom" timestamp="1594284142008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
-    <state width="1493" height="535" key="GridCell.Tab.0.center" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594284142008" />
+    <state width="1493" height="431" key="GridCell.Tab.0.center" timestamp="1594284142008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
-    <state width="1493" height="535" key="GridCell.Tab.0.left" timestamp="1594196252793">
+    <state width="1493" height="431" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594284142008" />
+    <state width="1493" height="431" key="GridCell.Tab.0.left" timestamp="1594284142008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594196252793" />
-    <state width="1493" height="535" key="GridCell.Tab.0.right" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594284142008" />
+    <state width="1493" height="431" key="GridCell.Tab.0.right" timestamp="1594284142008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
-    <state width="1493" height="535" key="GridCell.Tab.1.bottom" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594284142008" />
+    <state width="1493" height="431" key="GridCell.Tab.1.bottom" timestamp="1594284142009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
-    <state width="1493" height="535" key="GridCell.Tab.1.center" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594284142009" />
+    <state width="1493" height="431" key="GridCell.Tab.1.center" timestamp="1594284142008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
-    <state width="1493" height="535" key="GridCell.Tab.1.left" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594284142008" />
+    <state width="1493" height="431" key="GridCell.Tab.1.left" timestamp="1594284142008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
-    <state width="1493" height="535" key="GridCell.Tab.1.right" timestamp="1594196252794">
+    <state width="1493" height="431" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594284142008" />
+    <state width="1493" height="431" key="GridCell.Tab.1.right" timestamp="1594284142009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="535" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594196252794" />
+    <state width="1493" height="431" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594284142009" />
     <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1589274062385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -369,10 +373,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589274062385" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1594001871081">
+    <state x="270" y="55" key="SettingsEditor" timestamp="1594202237417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594001871081" />
+    <state x="270" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594202237417" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1594199957347">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594199957347" />
     <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1594100189015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -67,11 +67,11 @@ public class SearchController {
 //        RestHighLevelClient client = new RestHighLevelClient(
 //                RestClient.builder(new HttpHost("172.16.1.140", 9200, "http")));
 //
-//        CreateIndexRequest request = new CreateIndexRequest("doc");
+//        CreateIndexRequest request = new CreateIndexRequest("upload_doc");
 //
 //        request.settings(Settings.builder()
 //                .put("index.number_of_shards", 3)
-//                .put("index.number_of_replicas", 2)
+//                .put("index.number_of_replicas", 1)
 //        );
 //
 //        HashMap<String, Object> textType = new HashMap<>();
@@ -81,6 +81,7 @@ public class SearchController {
 //        dateType.put("type","date");
 //        dateType.put("format","yyyy-MM-dd HH:mm:ss||epoch_millis");
 //        HashMap<String, Object> properties = new HashMap<>();
+//        properties.put("uuid",textType);
 //        properties.put("content",textType);
 //        properties.put("title",textType);
 //        properties.put("author",textType);
@@ -103,6 +104,8 @@ public class SearchController {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(new HttpHost("172.16.1.140", 9200, "http")));
 
+
+
 //        Map<String, Object> jsonMap = new HashMap<>();
 //        jsonMap.put("content", "爱杰伦，爱周杰伦");
 //        jsonMap.put("title", "我是周杰伦");
@@ -117,9 +120,13 @@ public class SearchController {
 
         String queryTerm = "杰伦";
 
-        SearchRequest request = new SearchRequest();
+        SearchRequest request = new SearchRequest("doc");
+
+
+
         //总的SearchSourceBuilder
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
 /**
  * matchQuery：会将搜索词分词，再与目标查询字段进行匹配，若分词中的任意一个词与目标字段匹配上，则可查询到。
  *
@@ -130,6 +137,7 @@ public class SearchController {
         searchSourceBuilder.fetchSource(new String[]{"author", "title", "content", "date"}, new String[]{});
         searchSourceBuilder.query(QueryBuilders.multiMatchQuery(queryTerm,"author", "title", "content"));
         request.source(searchSourceBuilder);
+
         //起始页默认是0
 //        searchSourceBuilder.from(0);
 //        searchSourceBuilder.size(1);
